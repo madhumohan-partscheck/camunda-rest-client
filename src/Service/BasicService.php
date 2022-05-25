@@ -189,6 +189,7 @@ class BasicService
         $object = ($this->requestObject instanceof BasicRequest) ? $this->requestObject->getObject() : [];
         $body = [];
         $option = [];
+        $option['headers']['Authorization'] = 'Bearer ' . $GLOBALS['id_token'];
 
         // if HAL, add header
         if ($HAL) {
